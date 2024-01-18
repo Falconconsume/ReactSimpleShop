@@ -38,6 +38,16 @@ header ul.nav li:hover {
   opacity: 0.5;
 }
 
+header .shop-cart .suma {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+
 header .presentation {
   margin: 50px 0;
   background: url('./img/bg.webp ') no-repeat;
@@ -148,6 +158,23 @@ footer {
   margin-top: 100px;
 }
 
+.categories div {
+  display: inline-block;
+  background-color: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
 main {
   display: flex;
   width: 100%;
@@ -164,28 +191,35 @@ main .item {
   padding-bottom: 20px;
 }
 
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
   transform: scale(1.05);
 }
 
-main .item img {
+main .item img,
+.item img:hover {
   width: 100%;
   border-radius: 10px 10px;
   transition: transform 500ms ease;
   min-height: 550px;
+  cursor: pointer;
 }
 
-main b {
+main b,
+.full-item b {
   margin:  10px 20px;
   color: #5fa36a
 }
 
-main h2,main p {
+main h2,main p,
+.full-item h2,
+.full-item p {
   margin:  10px 20px;
   color:#333
 }
 
-main .add-to-cart {
+main .add-to-cart,
+.full-item .add-to-cart {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -200,8 +234,35 @@ main .add-to-cart {
   font-weight: 600;
 }
 
-main .add-to-cart:hover {
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
   transform: scale(1.5) translateY(-5px);
   transition: transform 500ms ease;
 }
 
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #514d4d8e;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.full-item > div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background-color: #fff;
+  border-radius: 9px;
+}
+
+.cross {
+  float: right;
+  cursor: pointer;
+  font-size: 40px;
+  color: red;
+}
